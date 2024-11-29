@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Login</title>
+  <!-- link font awsome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <body>
+    <div class="form-box">
+    <h2>Login Here</h2>
+    <form id="loginForm">
+      <div>
+        <i class="fa fa-user-circle-o"></i>
+        <input type="text" id="username" placeholder="Username" required>
+      </div>
+      <div>
+        <i class="fa fa-unlock"></i>
+        <input type="password" id="password" placeholder="Password" required>
+        <span class="eye">
+          <i id="hide1" class="fa fa-eye"></i>
+          <i id="hide2" class="fa fa-eye-slash"></i>
+        </span>
+        
+      </div>
+      <div>
+        <button type="submit" class="login-btn">Login</button>
+      </div>
+    </form>
+    </div>
+    <script>
+        // Predefined username and password
+        var validUsername = "admin";
+        var validPassword = "12345";
+    
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            // Validate credentials
+      if (username === validUsername && password === validPassword) {
+        window.location.href = "https://example.com"; // Redirect to another page
+      } else {
+        document.write("Invalid username or password!");
+      }
+    });
+    
+    
+  </script>
+  <script>
+    function myfunction(){
+      var x = document.getElementById("password");
+      var y = document.getElementById("hide1");
+      var z = document.getElementById("hide2");
+
+      if (x.type === 'password'){
+        x.type = "text";
+        y.style.display = "block";
+        z.style.display = "none";
+      }
+      else{
+        x.type = "password";
+        y.style.display = "none";
+        z.style.display = "block";
+      } 
+      
+    }
+  </script>
+</body>
+</html>
